@@ -1,0 +1,15 @@
+.song{
+  height: 50vh;
+  background-color: skyblue;
+  display: flex;
+  
+  flex-direction: column;
+  justify-content: center ;
+  align-items: center;
+
+}
+
+.song img {
+  width: 50%;
+  border-radius: 50%;
+}
