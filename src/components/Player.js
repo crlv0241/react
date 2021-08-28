@@ -21,7 +21,6 @@ const Player = ({currentSong, isPlaying, setIsPlaying} ) => {
       audioRef.current.play();
       setIsPlaying(!isPlaying)
     }
-   
   }
   
   const timeHandler = e => {
@@ -38,8 +37,6 @@ const Player = ({currentSong, isPlaying, setIsPlaying} ) => {
   
   const dragHandler = e => {
     audioRef.current.currentTime = e.target.value
-    if(e.target.value === audioRef.current.currentTime)
-      setIsPlaying(!isPlaying)
   }
   return (
       <div className ="player">
