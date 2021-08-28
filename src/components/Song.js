@@ -6,7 +6,7 @@ const Song = ({currentSong} ) => {
  
   return (
       <div className = "song">
-        <img src={currentSong.picture} alt="image" ></img>
+        <img src={currentSong.picture} alt={currentSong.song} ></img>
         <h2>{currentSong.song}</h2>
         <h3>{currentSong.artist}</h3>
       </div>
