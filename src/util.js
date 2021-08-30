@@ -9,7 +9,7 @@ const musics = () => {
           artist: "NEFFEX", 
           picture: "../util/Grateful/cover.jpg",
           audio: "../util/Grateful/NEFFEX - Grateful.flac", 
-          active: false
+          active: true
         }, 
         {
           id:uuidv4(), 

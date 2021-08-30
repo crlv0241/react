@@ -1,0 +1,19 @@
+.main-nav{
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+  
+  height: 10vh;
+}
+
+.main-nav button{
+  border: 2px solid gray;
+  padding:.2rem .8rem;
+  background-color:transparent ;
+  color: gray;
+}
+
+.main-nav .activeLibrary{
+  background-color: gray;
+  color: white;
+}
