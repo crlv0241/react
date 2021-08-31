@@ -1,6 +1,6 @@
 import {v4 as uuidv4} from 'uuid';
 
-const musics = () => {
+export const musics = () => {
   return (
       [
         {
@@ -23,4 +23,10 @@ const musics = () => {
     )
 }
 
-export default musics;
+export const playSong = (audioRef, setIsPlaying) => {
+  const playPromise = audioRef.current.play()
+        playPromise.then(() => {
+        audioRef.current.play();
+        setIsPlaying(true)
+      })
+}

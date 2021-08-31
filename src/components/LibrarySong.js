@@ -1,28 +1,23 @@
 import React from "react";
+import {playSong} from '../util'
 
-const LibrarySong = ({song, setCurrentSong, audioRef, setIsPlaying, isPlaying, setSongs, songs} ) => {
- 
+const LibrarySong = ({song,currentSong, setCurrentSong, audioRef, setIsPlaying, isPlaying, setSongs, songs} ) => {
+
   const selectSong = () => {
-    setCurrentSong(song)
-    
+    setCurrentSong(song) 
     //active song on the Library
     //updates the state songs
-  
-    const updatedSongSelection = songs.map(s => {
-      if(s.id === song.id){
-        return {...s, active:true} 
-      } else {
-        return {...s, active:false}
-      }
-    })
-    
-    setSongs(updatedSongSelection);
-    
-    const playPromise = audioRef.current.play()
-        playPromise.then( () => {
-        audioRef.current.play();
-        setIsPlaying(true)
+      const updatedSongSelection = songs.map(s => {
+        if(s.id === song.id){
+          return {...s, active:true} 
+        } else {
+          return {...s, active:false}
+        }
       })
+      
+      setSongs(updatedSongSelection);
+    
+      playSong(audioRef, setIsPlaying );
   }
  
   return (

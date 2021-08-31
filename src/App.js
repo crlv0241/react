@@ -2,7 +2,7 @@
 import './styles/App.css';
 import Song from "./components/Song.js";
 import Player from "./components/Player.js"
-import musics from "./util.js"
+import {musics} from "./util.js"
 import React, {useState, useRef} from "react"
 import Library from "./components/Library";
 import Nav from './components/Nav'
@@ -31,16 +31,18 @@ function App() {
       <Song  currentSong = {currentSong} />
       <Player 
       isPlaying = {isPlaying} 
-      currentSong = {currentSong} 
       setIsPlaying = {setIsPlaying} 
       audioRef = {audioRef} 
       songTime = {songTime}
-      songs = {songs} 
+      songs = {songs}
+      setSongs = {setSongs} 
       setCurrentSong = {setCurrentSong} 
+      currentSong = {currentSong} 
       />
       
       <Library 
-      songs = {songs} 
+      songs = {songs}
+      currentSong = {currentSong} 
       setCurrentSong={setCurrentSong} 
       audioRef = {audioRef} 
       isPlaying = {isPlaying} 
