@@ -62,19 +62,28 @@ const Player = ({
     playSong(audioRef, setIsPlaying)
   }
 
+
+ 
+
+
   return (
     <div className="player">
+    {songTime.playPercentage}
         <div className="time-control">
           <p>
       {formatTime(songTime.currentPlayTime)}
     </p>
+    <div className = "track">
           <input type="range"
       min={0}
       max={songTime.remainingTime || 0 }
       value={songTime.currentPlayTime}
       onChange={dragHandler}
-
       ></input>
+      <div style= { {
+    transform:`translateX(${songTime.playPercentage}%)`
+  }} className = "filled-track" ></div>
+    </div>
           <p>
         {formatTime(songTime.remainingTime || 0)}
     </p>

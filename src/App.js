@@ -16,14 +16,18 @@ function App() {
 
   const [songTime, setSongTime] = useState({
     currentPlayTime: 0,
-    remainingTime:0
+    remainingTime:0, 
+    playPercentage:-100,
   })
 
   const timeHandler = e => {
     let currentPlayTime = e.target.currentTime;
     let remainingTime = e.target.duration ;
-    setSongTime({...songTime, currentPlayTime, remainingTime})
+    let playPercentage =Math.round((( Math.round(currentPlayTime)/ Math.round(remainingTime)) * 100) - 100) ;
+    setSongTime({...songTime, currentPlayTime, remainingTime, playPercentage})
   }
+  
+  
 
   return (
     <div className = "app" >
